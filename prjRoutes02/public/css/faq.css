@@ -1,0 +1,416 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  body{
+    background: #021640;
+      background-size: cover;
+    background-repeat: round;
+  }
+  
+  
+    html, body, #root {
+      height: 100%;
+    }
+  .wrapper .header{
+    z-index: 1;
+    background: #000000;
+    position: fixed;
+    width: calc(100% - 0%);
+    height: 70px;
+    display: flex;
+    top: 0;
+  }
+  
+  .wrapper .header .header-menu{
+    width: calc(100% - 0%);
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .wrapper .header .header-menu .title{
+    color: #fff;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  
+  .wrapper .header .header-menu .title span{
+    color: #4CCEE8;
+  }
+  
+  .wrapper .header .header-menu .sidebar-btn{
+    color: #fff;
+    position: absolute;
+    margin-left: 15px;
+    font-size: 22px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.3s;
+    transition-property: color;
+  }
+  
+  .wrapper .header .header-menu .sidebar-btn:hover{
+    color: #4CCEE8;
+  }
+  
+  .wrapper .header .header-menu ul{
+    display: flex;
+  }
+  
+  .wrapper .header .header-menu ul li a{
+    background: #fff;
+    color: #000;
+    display: block;
+    margin: 0 10px;
+    font-size: 18px;
+    width: 34px;
+    height: 34px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    transition-property: background, color;
+  }
+  
+  .wrapper .header .header-menu ul li a:hover{
+    background: #4CCEE8;
+    color: #fff;
+  }
+  
+  .wrapper .sidebar{
+    z-index: 1;
+    background: #000000;
+    position: fixed;
+    top: 70px;
+    width: 250px;
+    height: 100%;
+    transition: 0.3s;
+    transition-property: width;
+    overflow-y: auto;
+  }
+  
+  .wrapper .sidebar .sidebar-menu{
+    overflow: hidden;
+  }
+  
+  .wrapper .sidebar .sidebar-menu .profile img{
+    margin: 20px 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .wrapper .sidebar .sidebar-menu .profile p{
+    color: #bbb;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .wrapper .sidebar .sidebar-menu .item{
+    width: 250px;
+    overflow: hidden;
+  }
+  
+  .wrapper .sidebar .sidebar-menu .item .menu-btn{
+    display: block;
+    color: #fff;
+    position: relative;
+    padding: 25px 20px;
+    transition: 0.3s;
+    transition-property: color;
+  }
+  
+  .wrapper .sidebar .sidebar-menu .item .menu-btn:hover{
+    color: #3065bb;
+  }
+  
+  .wrapper .sidebar .sidebar-menu .item .menu-btn i{
+    margin-right: 20px;
+  }
+  
+  .wrapper .sidebar .sidebar-menu .item .menu-btn .drop-down{
+    float: right;
+    font-size: 12px;
+    margin-top: 3px;
+  }
+  
+  .wrapper .sidebar .sidebar-menu .item .sub-menu{
+    background: #3065bb;
+    overflow: hidden;
+    max-height: 0;
+    transition: 0.3s;
+    transition-property: background, max-height;
+  }
+  
+  .wrapper .sidebar .sidebar-menu .item .sub-menu a{
+    display: block;
+    position: relative;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 15px;
+    padding: 20px;
+    transition: 0.3s;
+    transition-property: background;
+  }
+  
+  .wrapper .sidebar .sidebar-menu .item .sub-menu a:hover{
+    background: #55B1F0;
+  }
+  
+  .wrapper .sidebar .sidebar-menu .item .sub-menu a:not(last-child){
+    border-bottom: 1px solid #8FC5E9;
+  }
+  
+  .wrapper .sidebar .sidebar-menu .item .sub-menu i{
+    padding-right: 20px;
+    font-size: 10px;
+  }
+  
+  .wrapper .sidebar .sidebar-menu .item:target .sub-menu{
+    max-height: 500px;
+  }
+  
+  .wrapper .main-container{
+    width: (100% - 250px);
+    margin-top: 70px;
+    margin-left: 250px;
+    padding: 15px;
+    background: url("/Background.") repeat;
+    background-size: cover;
+    height: 125vh;
+    transition: 0.3s;
+  }
+  
+  .wrapper.collapse .sidebar{
+    width: 70px;
+  }
+  
+  .wrapper.collapse .sidebar .profile img,
+  .wrapper.collapse .sidebar .profile p,
+  .wrapper.collapse .sidebar a span{
+    display: none;
+  }
+  
+  .wrapper.collapse .sidebar .sidebar-menu .item .menu-btn{
+    font-size: 23px;
+  }
+  
+  .wrapper.collapse .sidebar .sidebar-menu .item .sub-menu i{
+    font-size: 18px;
+    padding-left: 3px;
+  }
+  
+  .wrapper.collapse .main-container{
+    width: calc(100% - 70px);
+    margin-left: 70px;
+  }
+  
+  
+  .card {
+      display: flex;
+    flex-direction: row;
+      align-items: baseline;
+  }
+  
+  .flex-container {
+   all: unset;
+   display: center ;
+  flex-direction: row;
+  background-color: #2a2b2b;
+   align-items: baseline;
+   border-radius: 25px;
+      width: 100%;
+      height: 20%;
+      color: white;
+      margin: 50px;
+      margin-bottom: 0px;
+  
+   }
+  
+  .flex-container>div {
+    all: unset;
+      width: 25%;
+    margin: 15px;
+    text-align: center;
+    line-height: 23px;
+    font-size: 16px;
+    padding: 15px 10px;
+    border-radius: 15px;
+    font-family: arial;
+    color: white;
+      margin-bottom: 0px;
+  }
+  
+  .flex-container>div.extend {
+    all: unset;
+    margin: 15px;
+    text-align: center;
+    line-height: 23px;
+    font-size: 18px;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: arial;
+    color: white;
+      margin-bottom: 0px;
+  }
+  
+  .imgfeed {
+      width: 30%;
+      height: 30%;
+      margin-top: 25px;
+  }
+  
+  .imghumor {
+      width: 45%;
+      height: 2%;
+      margin: 0px;
+  }
+  
+  .campo .text{
+      padding: 0.2em;
+      border: 1px solid #9e0000;
+  }
+  
+  .imguser {
+      margin: 10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  
+  @media (max-width: 670px) {
+      .flex-container {
+  flex-direction: column;
+   }
+  
+  .flex-container>div {
+    all: unset;
+      width: 20%;
+      height: 20%;
+    margin: 15px;
+    text-align: center;
+    line-height: 23px;
+    font-size: 16px;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: arial;
+    color: white;
+  }
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  body2 {
+    margin: 0;
+    padding: 0;
+    font-family: "Hind", sans-serif;
+    color: white;
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .container {
+    margin: 0 auto;
+    padding: 4rem;
+    width: 48rem;
+  }
+  
+  .accordion .accordion-item {
+    border-bottom: 1px solid white;
+  }
+  .accordion .accordion-item button[aria-expanded=true] {
+    border-bottom: 1px solid #3065bb;
+  }
+  .accordion button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: white;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  .accordion button:hover, .accordion button:focus {
+    cursor: pointer;
+    color: #3065bb;
+  }
+  .accordion button:hover::after, .accordion button:focus::after {
+    cursor: pointer;
+    color: #3065bb;
+    border: 1px solid #3065bb;
+  }
+  .accordion button .accordion-title {
+    padding: 1em 1.5em 1em 0;
+  }
+  .accordion button .icon {
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid;
+    border-radius: 22px;
+  }
+  .accordion button .icon::before {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 9px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+  }
+  .accordion button .icon::after {
+    display: block;
+    position: absolute;
+    content: "";
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+  }
+  .accordion button[aria-expanded=true] {
+    color: #3065bb;
+  }
+  .accordion button[aria-expanded=true] .icon::after {
+    width: 0;
+  }
+  .accordion button[aria-expanded=true] + .accordion-content {
+    opacity: 1;
+    max-height: 9em;
+    transition: all 200ms linear;
+    will-change: opacity, max-height;
+  }
+  .accordion .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+  }
+  .accordion .accordion-content p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 2em 0;
+  }
